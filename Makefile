@@ -6,7 +6,7 @@ OBJECTS = $(SOURCES:.c=.o)
 
 vpath %.c
 
-EXECUTABLE = ./c_vector.so
+EXECUTABLE = ./libc_vector.so
 
 all: $(SOURCES) $(EXECUTABLE)
 
