@@ -6,7 +6,7 @@ OBJECTS = $(SOURCES:.c=.o)
 
 vpath %.c
 
-EXECUTABLE = ./libc_vector.so
+EXECUTABLE = libc_vector.so
 
 all: $(SOURCES) $(EXECUTABLE)
 
@@ -16,7 +16,11 @@ $(EXECUTABLE) : $(OBJECTS)
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@
 
-.PHONY: clean 
+.PHONY: install
+install:
+	cp $(EXECUTABLE) /usr/lib/$(EXECUTABLE)
+
+.PHONY: clean
 clean:
 	rm $(OBJECTS)
 
