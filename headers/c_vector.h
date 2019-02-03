@@ -19,5 +19,6 @@
 	unsigned char vectorAnythingNotIn(void const *data, unsigned int data_size, struct cVector const *c_vector);
 
 	char const *vectorGetString(struct cVector const *c_vector, unsigned int element_number, char const *fail_return);
+	void *vectorGetAnything(struct cVector const *c_vector, unsigned int element_number, void *fail_return);
 	unsigned int vectorGetSize(struct cVector const *c_vector);
 #endif

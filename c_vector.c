@@ -113,6 +113,28 @@ char const *vectorGetString(struct cVector const *c_vector, unsigned int element
 	return (char const *)char_data;
 }
 
+void *vectorGetAnything(struct cVector const *c_vector, unsigned int element_number, void *fail_return) {
+	if (!c_vector)
+	{
+		perror("cVector: c_vector == nil!");
+		return fail_return;
+	}
+
+	if (!c_vector->data)
+	{
+		perror("cVector: c_vector empty!");
+		return fail_return;
+	}
+
+	if (element_number > (c_vector->size - 1))
+	{
+		perror("cVector: element number out of size c_vector!");
+		return fail_return;
+	}
+
+	return c_vector->data[element_number].data;
+}
+
 unsigned int vectorGetSize(struct cVector const *c_vector) {
 	if (!c_vector)
 	{
